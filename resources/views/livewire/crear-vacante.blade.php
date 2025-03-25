@@ -25,8 +25,19 @@ action="">
     class=" w-full border-gray-300 focus:border-indigo-500
      focus:ring-indigo-500 rounded-md shadow-sm">
 
-    </select>
+     
+     <option value="">
+         ---   Select option --- 
+        </option>
 
+        @foreach ($salarios as $salario)
+        <option value="{{ $salario->id }}">
+            {{ $salario->salario }}
+           
+           </option>
+        @endforeach
+        
+    </select>
     <x-input-error :messages="$errors->get('salary')" class="mt-2" />
 </div>
 
@@ -38,6 +49,18 @@ action="">
     id="category"
     class=" w-full border-gray-300 focus:border-indigo-500
      focus:ring-indigo-500 rounded-md shadow-sm">
+
+     <option value="">
+        ---   Select option --- 
+       </option>
+
+       @foreach ($categorias as $categoria)
+       <option value="{{ $categoria->id }}">
+           {{ $categoria->categoria }}
+          
+          </option>
+       @endforeach
+       
 
     </select>
 
