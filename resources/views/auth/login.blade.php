@@ -34,14 +34,15 @@
 
         <div class="flex justify-between my-5">
            <x-link
-           :href="route('register')"
+       
+            :href="route('password.request')"
            > 
             Olvidaste tu contraseña?    
             </x-link>
 
 
             <x-link
-             :href="route('password.request')"
+             :href="route('register')"
             > 
                  
                 Crear cuenta  
