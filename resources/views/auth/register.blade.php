@@ -15,6 +15,24 @@
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
+                <!-- rol  -->
+                <div class="mt-4">
+                    <x-input-label 
+                    for="rol" 
+                    :value="__('Que tipo de cuenta deseas en DevJobs? ')" />
+                
+                    <select 
+                    name="rol"
+                     id="rol"
+                     class=" w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
+                        <option value="0">Select option</option>
+                        <option value="1">Developer - 
+                            get a job</option>
+                        <option value="2">
+                            Recruiter - 
+                            post job </option>
+                    </select>
+                </div>
 
         <!-- Password -->
         <div class="mt-4">
