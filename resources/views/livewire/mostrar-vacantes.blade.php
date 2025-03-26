@@ -6,7 +6,7 @@
             @foreach ($vacantes as $vacante)
             <div class="p-6 text-gray-900 border-b last:border-b-0 font-bold md:flex justify-between items-center">
                 <div class="leading-10">
-                    <a href="" class="text-xl text-black-600 hover:underline">
+                    <a href="{{route('vacantes.show',$vacante->id) }}" class="text-xl text-black-600 ">
                         {{ $vacante->titulo }}
                     </a>
                     <p class="text-sm text-gray-600 font-bold">

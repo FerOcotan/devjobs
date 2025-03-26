@@ -15,7 +15,7 @@
 
                                 <livewire:editar-vacante :vacante="$vacante" />
                                 
-                                />
+                          
                                 
                             </div>
 
