@@ -1,7 +1,7 @@
 <form
 
 class="md:w-1/2 space-y-5"
-action=""  wire:submit.prevent="crearVacante">
+action=""  wire:submit.prevent="editarVacante">
 
 <div>
     <x-input-label for="titulo" :value="__('Title of vacacie')" />
