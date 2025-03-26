@@ -59,8 +59,8 @@ class EditarVacante extends Component
         $vacante = Vacante::find($this->vacante_id);
 
         if ($this->imagen_nueva) {
-            $imagen = $this->imagen_nueva->store('vacantes', 'public');
-            $datos['imagen'] = str_replace('public/vacantes/', '', $imagen);
+            $imagen = $this->imagen->store('vacantes','public');
+            $datos['imagen'] = str_replace('vacantes/', '',$imagen);
             Storage::delete('public/vacantes/' .  $vacante->imagen);
             $vacante->imagen = $datos['imagen'];
         }
