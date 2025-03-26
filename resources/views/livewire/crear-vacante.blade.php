@@ -4,24 +4,24 @@ class="md:w-1/2 space-y-5"
 action=""  wire:submit.prevent="crearVacante">
 
 <div>
-    <x-input-label for="title" :value="__('Title of vacacie')" />
+    <x-input-label for="titulo" :value="__('Title of vacacie')" />
     <x-text-input 
-    id="title" 
+    id="titulo" 
     class="block mt-1 w-full"
      type="text" 
-     wire:model="title" 
-     :value="old('title')" 
+     wire:model="titulo" 
+     :value="old('titulo')" 
      placeholder="Title of vacacie"
    />
-    <x-input-error :messages="$errors->get('title')" class="mt-2" />
+    <x-input-error :messages="$errors->get('titulo')" class="mt-2" />
 </div>
 
 <div>
-    <x-input-label for="salary" :value="__('monthly salary')" />
+    <x-input-label for="salario" :value="__('monthly salary')" />
     
     <select 
-    wire:model="salary"
-    id="salary"
+    wire:model="salario"
+    id="salario"
     class=" w-full border-gray-300 focus:border-indigo-500
      focus:ring-indigo-500 rounded-md shadow-sm">
 
@@ -38,15 +38,15 @@ action=""  wire:submit.prevent="crearVacante">
         @endforeach
         
     </select>
-    <x-input-error :messages="$errors->get('salary')" class="mt-2" />
+    <x-input-error :messages="$errors->get('salario')" class="mt-2" />
 </div>
 
 <div>
-    <x-input-label for="category" :value="__('category')" />
+    <x-input-label for="categoria" :value="__('categoria')" />
     
     <select 
-    wire:model="category"
-    id="category"
+    wire:model="categoria"
+    id="categoria"
     class=" w-full border-gray-300 focus:border-indigo-500
      focus:ring-indigo-500 rounded-md shadow-sm">
 
@@ -64,70 +64,70 @@ action=""  wire:submit.prevent="crearVacante">
 
     </select>
 
-    <x-input-error :messages="$errors->get('category')" class="mt-2" />
+    <x-input-error :messages="$errors->get('categoria')" class="mt-2" />
 </div>
 
 <div>
-    <x-input-label for="company" :value="__('company')" />
+    <x-input-label for="empresa" :value="__('empresa')" />
     <x-text-input 
-    id="company" 
+    id="empresa" 
     class="block mt-1 w-full"
      type="text" 
-     wire:model="company" 
-     :value="old('company')" 
+     wire:model="empresa" 
+     :value="old('empresa')" 
      placeholder="company ej. Netflix, Uber,Samsung"
    />
-    <x-input-error :messages="$errors->get('company')" class="mt-2" />
+    <x-input-error :messages="$errors->get('empresa')" class="mt-2" />
 </div>
 
 <div>
-    <x-input-label for="last_day" :value="__('last day to postulate')" />
+    <x-input-label for="ultimo_dia" :value="__('last day to postulate')" />
     <x-text-input 
-    id="last_day" 
+    id="ultimo_dia" 
     class="block mt-1 w-full"
      type="date" 
-     wire:model="last_day" 
-     :value="old('last_day')" 
+     wire:model="ultimo_dia" 
+     :value="old('ultimo_dia')" 
   
    />
-    <x-input-error :messages="$errors->get('last_day')" class="mt-2" />
+    <x-input-error :messages="$errors->get('ultimo_dia')" class="mt-2" />
 </div>
 
 
 <div>
-    <x-input-label for="description" :value="__('description job')" />
+    <x-input-label for="descripcion" :value="__('description job')" />
 
     <textarea
-    wire:model="description"
-    id="description"
+    wire:model="descripcion"
+    id="descripcion"
     class="w-full border-gray-300 focus:border-indigo-500
      focus:ring-indigo-500 rounded-md shadow-sm"
      rows="5"
      placeholder="description job"
     ></textarea>
 
-    <x-input-error :messages="$errors->get('last_day')" class="mt-2" />
+    <x-input-error :messages="$errors->get('descripcion')" class="mt-2" />
 </div>
 
 <div>
-    <x-input-label for="image" :value="__('image')" />
+    <x-input-label for="imagen" :value="__('imagen')" />
     <x-text-input 
-     id="image" 
+     id="imagen" 
         class="block mt-1 w-full"
         type="file" 
-     accept="image/*"
-     wire:model="image" 
+     accept="imagen/*"
+     wire:model="imagen" 
      
    />
 
     <div class="my-5 w-96">
-        @if ($image)
-        Image:
-        <img src="{{ $image->temporaryUrl() }}" alt="">
-        @endif
+        @if ($imagen)
+        Image preview:
+        <img src="{{ $imagen->temporaryUrl() }}" alt="Preview">
+    @endif
     </div>
    
-    <x-input-error :messages="$errors->get('image')" class="mt-2" />
+    <x-input-error :messages="$errors->get('imagen')" class="mt-2" />
 </div>
 
 <x-primary-button>
