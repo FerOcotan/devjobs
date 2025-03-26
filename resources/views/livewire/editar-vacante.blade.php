@@ -110,32 +110,25 @@ action=""  wire:submit.prevent="editarVacante">
 </div>
 
 
-<div>
-    <x-input-label for="imagen" :value="__('imagen')" />
-    <x-text-input 
-     id="imagen" 
-        class="block mt-1 w-full"
-        type="file" 
-     accept="image/*"
-     wire:model="imagen" 
-     
-   />
-   
-   <div class="my-5 w-96">
+<x-text-input 
+    id="imagen" 
+    class="block mt-1 w-full"
+    type="file" 
+    wire:model="imagen_nueva" 
+    accept="image/*"
+/>
+<!-- Imagen actual -->
+<div class="my-5 w-96">
     <x-input-label  :value="__('Actual imagen')" />
     <img src="{{ asset('storage/vacantes/') . $imagen }}" alt="Imagen vacante {{$titulo}}">
-
-   </div>
-
-{{--     <div class="my-5 w-96">
-        @if ($imagen)
+</div>
+<!-- Previsualización de la imagen nueva -->
+<div class="my-5 w-96">
+    @if ($imagen_nueva)
         Image preview:
-        <img src="{{ $imagen->temporaryUrl() }}" alt="Preview">
+        <img src="{{ $imagen_nueva->temporaryUrl() }}" alt="Preview">
     @endif
-    </div> --}}
-   
-    <x-input-error :messages="$errors->get('imagen')" class="mt-2" />
-</div> 
+</div>
 
 <x-primary-button>
     Create Vacante
