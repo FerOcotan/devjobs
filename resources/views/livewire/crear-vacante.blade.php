@@ -1,7 +1,7 @@
 <form
 
 class="md:w-1/2 space-y-5"
-action="">
+action=""  wire:submit.prevent="crearVacante">
 
 <div>
     <x-input-label for="title" :value="__('Title of vacacie')" />
@@ -9,7 +9,7 @@ action="">
     id="title" 
     class="block mt-1 w-full"
      type="text" 
-     name="title" 
+     wire:model="title" 
      :value="old('title')" 
      placeholder="Title of vacacie"
    />
@@ -20,7 +20,7 @@ action="">
     <x-input-label for="salary" :value="__('monthly salary')" />
     
     <select 
-    name="salary"
+    wire:model="salary"
     id="salary"
     class=" w-full border-gray-300 focus:border-indigo-500
      focus:ring-indigo-500 rounded-md shadow-sm">
@@ -45,7 +45,7 @@ action="">
     <x-input-label for="category" :value="__('category')" />
     
     <select 
-    name="category"
+    wire:model="category"
     id="category"
     class=" w-full border-gray-300 focus:border-indigo-500
      focus:ring-indigo-500 rounded-md shadow-sm">
@@ -73,7 +73,7 @@ action="">
     id="company" 
     class="block mt-1 w-full"
      type="text" 
-     name="company" 
+     wire:model="company" 
      :value="old('company')" 
      placeholder="company ej. Netflix, Uber,Samsung"
    />
@@ -86,7 +86,7 @@ action="">
     id="last_day" 
     class="block mt-1 w-full"
      type="date" 
-     name="last_day" 
+     wire:model="last_day" 
      :value="old('last_day')" 
   
    />
@@ -98,7 +98,7 @@ action="">
     <x-input-label for="description" :value="__('description job')" />
 
     <textarea
-    name="description"
+    wire:model="description"
     id="description"
     class="w-full border-gray-300 focus:border-indigo-500
      focus:ring-indigo-500 rounded-md shadow-sm"
@@ -115,7 +115,7 @@ action="">
     id="image" 
     class="block mt-1 w-full"
      type="file" 
-     name="image" 
+     wire:model="image" 
      
    />
     <x-input-error :messages="$errors->get('title')" class="mt-2" />
