@@ -8,6 +8,9 @@ use Livewire\Component;
 
 class MostrarVacantes extends Component
 {
+    protected $listeners = ['eliminarVacante']; // Añade esto para escuchar el evento
+
+
     public function eliminarVacante(Vacante $vacante)
     {
         $vacante->delete();
