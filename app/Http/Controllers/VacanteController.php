@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Vacante;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class VacanteController extends Controller
 {
+    use AuthorizesRequests;
+    
     /**
      * Display a listing of the resource.
      */
@@ -45,6 +48,9 @@ class VacanteController extends Controller
      */
     public function edit(Vacante $vacante)
     {
+
+        $this->authorize('update', $vacante);
+
         return view('vacantes.edit',['vacante' => $vacante]);
     }
 
