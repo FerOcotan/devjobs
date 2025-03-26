@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\Salario;
 use Livewire\Component;
 use App\Models\Categoria;
+use Livewire\WithFileUploads;
 
 class CrearVacante extends Component
 {
@@ -17,6 +18,8 @@ class CrearVacante extends Component
     public $description;
     public $image;
 
+    use WithFileUploads;
+
 
     protected $rules = [
         'title' => 'required|string',
@@ -25,7 +28,7 @@ class CrearVacante extends Component
         'company' => 'required',
         'last_day' => 'required',
         'description' => 'required',
-        'image' => 'required',
+        'image' => 'required | image | max:1024',
     ];
    
     public function crearVacante(){

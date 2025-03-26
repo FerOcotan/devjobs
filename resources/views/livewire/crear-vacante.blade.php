@@ -112,13 +112,22 @@ action=""  wire:submit.prevent="crearVacante">
 <div>
     <x-input-label for="image" :value="__('image')" />
     <x-text-input 
-    id="image" 
-    class="block mt-1 w-full"
-     type="file" 
+     id="image" 
+        class="block mt-1 w-full"
+        type="file" 
+     accept="image/*"
      wire:model="image" 
      
    />
-    <x-input-error :messages="$errors->get('title')" class="mt-2" />
+
+    <div class="my-5 w-96">
+        @if ($image)
+        Image:
+        <img src="{{ $image->temporaryUrl() }}" alt="">
+        @endif
+    </div>
+   
+    <x-input-error :messages="$errors->get('image')" class="mt-2" />
 </div>
 
 <x-primary-button>
