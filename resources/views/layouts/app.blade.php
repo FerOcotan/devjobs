@@ -18,6 +18,7 @@
 
 
         @livewireStyles
+        @stack('styles')
 
     </head>
     <body class="font-sans antialiased">
@@ -40,5 +41,6 @@
         </div>
         <script src="//unpkg.com/alpinejs" defer></script>
         @livewireScripts
+        @stack('scripts')
     </body>
 </html>

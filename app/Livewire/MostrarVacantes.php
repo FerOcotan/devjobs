@@ -8,6 +8,12 @@ use Livewire\Component;
 
 class MostrarVacantes extends Component
 {
+    public function eliminarVacante(Vacante $vacante)
+    {
+        $vacante->delete();
+    }
+    
+
     public function render()
     {
         $vacantes = Vacante::where('user_id', Auth::user()->id)->paginate(10);
