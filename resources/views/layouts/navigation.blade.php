@@ -13,7 +13,7 @@
 
                 @auth
     
-
+                @can('create', App\Models\Vacante::class)
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('vacantes.index')" :active="request()->routeIs('vacantes.index')">
@@ -25,13 +25,14 @@
                 </div>
                 @endauth
 
+                @endcan
 
                 
                 @guest
                     
               
     
-
+         
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('login')">
@@ -41,6 +42,7 @@
                         {{ __('Register') }}
                     </x-nav-link>
                 </div>
+                
                 @endguest
 
             </div>
