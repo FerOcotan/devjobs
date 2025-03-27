@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VacanteController;
+use App\Http\Controllers\NotificacionController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,8 +25,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/linkstorage', function () {
-    Artisan::call('storage:link');
-});
 
+
+
+
+
+Route::get('/notificaciones', NotificacionController::class);
 require __DIR__.'/auth.php';
