@@ -51,6 +51,16 @@
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 @auth
                     
+                
+                @can('create', App\Models\Vacante::class)
+                <a class="mr-2 w-7 h-7 bg-red-500 hover:bg-red-600 rounded-full flex flex-col justify-center items-center text-sm font-extrabold text-white" 
+                href="{{ route('notificaciones') }}">
+                    {{ Auth::user()->unreadNotifications->count() }}
+                </a>
+            @endcan
+
+
+                    
            
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -111,6 +121,20 @@
                                     {{ __('
                     Create vacancies') }}
             </x-responsive-nav-link>
+                    @if (auth()->user()->rol === 2)
+                    <div class="flex gap-2 items-center p-3">
+                        <a class="p-3 w-7 h-7 bg-red-500 hover:bg-red-600 rounded-full flex flex-col justify-center items-center text-sm font-extrabold text-white" 
+                        href="{{ route('notificaciones') }}">
+                            {{ Auth::user()->unreadNotifications->count() }}
+                        </a>
+                        <p class="text-base font-medium text-gray-600">
+                            @choice('Notificacion|Notificaciones', Auth::user()->unreadNotifications->count())
+                        </p>
+                     
+                    </div>
+                @endif
+
+            
                 </div>
 
                 <!-- Responsive Settings Options -->
@@ -134,6 +158,9 @@
                                         this.closest('form').submit();">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
+
+            
+                    
                 </form>
             </div>
         </div>
