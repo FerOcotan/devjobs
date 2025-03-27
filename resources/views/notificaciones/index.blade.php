@@ -34,7 +34,7 @@
                                         </p>
                                     </div>
                                     <div class="mt-5 lg:mt-0">
-                                        <a href="" class="bg-lime-600 text-white p-3 rounded-lg hover:bg-lime-700 font-bold text-sm uppercase">
+                                        <a href="{{ route("candidatos.index",$notificacion->data['id_vacante']) }}" class="bg-lime-600 text-white p-3 rounded-lg hover:bg-lime-700 font-bold text-sm uppercase">
                                             Ver candidatos
                                         </a>
                                     </div>
