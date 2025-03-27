@@ -58,16 +58,12 @@
         </p>
     </div>
     
-    @endguest
+            @endguest
 
-        @cannot('create', App\Models\Vacante::class)
-            
-           
-        <livewire:postular-vacante />
-
+            @cannot('create', App\Models\Vacante::class)
+            <livewire:postular-vacante :vacante="$vacante" />
         @endcannot
-    
-       
+            
 
 
 
