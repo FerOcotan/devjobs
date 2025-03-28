@@ -47,6 +47,5 @@ class Vacante extends Model
 
 
 
-
     
 }

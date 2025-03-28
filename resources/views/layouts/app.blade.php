@@ -25,6 +25,12 @@
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 
+
+            @if (@isset($header))
+                
+     
+                
+
             <!-- Page Heading -->
             @isset($header)
                 <header class="bg-white shadow">
@@ -33,7 +39,7 @@
                     </div>
                 </header>
             @endisset
-
+            @endif
             <!-- Page Content -->
             <main>
                 {{ $slot }}
